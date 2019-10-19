@@ -35,14 +35,18 @@ public class RawMaterial {
 		ingredients.put(50, "Mayonnese");
 		ingredients.put(50, "Red Chilli Sauce");
 		
-		ingredients.put(50, "Sandwich Bread");
-		ingredients.put(50, "Cheese");
-		ingredients.put(50, "Pizza bread");
+		//spices
 		ingredients.put(50, "Salt");
 		ingredients.put(50, "Garam Masala");
 		ingredients.put(50, "Turmeric Powder");
 		ingredients.put(50, "Red Chilli Powder");
-		ingredients.put(50, "Vinegar");
+	
+		//bakery
+		ingredients.put(50, "Sandwich Bread");
+		ingredients.put(50, "Cheese");
+		ingredients.put(50, "Pizza bread");
+		
+		//
 		ingredients.put(50, "Whole-wheat");
 		ingredients.put(50, "Whole-wheat");
 		ingredients.put(50, "Whole-wheat");
