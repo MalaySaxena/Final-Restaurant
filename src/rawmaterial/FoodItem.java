@@ -47,5 +47,9 @@ public class FoodItem {
 		
 	}
 	
+	@Override
+	public String toString() {
+		return "Food Item:=>" + name + ", Price:=>" + price ;
+	}
 	
 }

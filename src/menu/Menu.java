@@ -7,7 +7,7 @@ import rawmaterial.FoodItem;
 public class Menu {
 	ArrayList<FoodItem> menu = new ArrayList<FoodItem>(18);
 
-	{
+	Menu(){
 		FoodItem food = null;
 
 		// 1 Sandwich
@@ -182,6 +182,17 @@ public class Menu {
 		food.addRawMaterial("Salt", 1);
 		food.addRawMaterial("Jeera", 1);
 		menu.add(food);
+		
+	}
+	
+	public void displayMenu() {
+		System.out.println("------------------------------------");
+		System.out.println("----------------MENU----------------");
+		System.out.println("------------------------------------");
+		for(FoodItem foodItem: menu) {
+			System.out.println(foodItem);
+		}
+		System.out.println("------------------------------------");
 		
 	}
 }
