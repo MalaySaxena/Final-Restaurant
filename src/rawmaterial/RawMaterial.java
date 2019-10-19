@@ -3,15 +3,15 @@ package rawmaterial;
 import java.util.Hashtable;
 
 public class RawMaterial {
-	static Hashtable<Integer,String> ingredients = new Hashtable<Integer,String>();
+	static Hashtable<String,Integer> ingredients = new Hashtable<String,Integer>();
 	
 	RawMaterial()
 	{
 		//vegetables
-		ingredients.put(50, "Palak");
-		ingredients.put(50, "Cauliflower");
-		ingredients.put(50, "Cabbage");
-		ingredients.put(50, "Tomato");
+		ingredients.put( "Palak",50);
+		ingredients.put("Cauliflower",50);
+		ingredients.put("Cabbage",50);
+		ingredients.put("Tomato",50);
 		ingredients.put(50, "Methi");
 		ingredients.put(50, "Dhaniya");
 		ingredients.put(50, "Carrot");
