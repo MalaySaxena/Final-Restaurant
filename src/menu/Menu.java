@@ -7,7 +7,7 @@ import rawmaterial.FoodItem;
 public class Menu {
 	static ArrayList<FoodItem> menu = new ArrayList<FoodItem>(18);
 
-	Menu(){
+	public Menu(){
 		FoodItem food = null;
 
 		// 1 Sandwich
@@ -185,14 +185,18 @@ public class Menu {
 		
 	}
 	
-	public static void displayMenu() {
-		System.out.println("------------------------------------");
-		System.out.println("----------------MENU----------------");
-		System.out.println("------------------------------------");
+	public void displayMenu() {
+		String leftAlignFormat = "| %-4d | %-25s | %-4d |%n";
+		int i=0;
+		System.out.format("+-----------------------------------------+%n");
+		System.out.format("+--------------------MENU-----------------+%n");
+		System.out.format("+------+---------------------------+------+%n");
+		System.out.format("|S.No. | Food Item                 |Price |%n");
+		System.out.format("+------+---------------------------+------+%n");
 		for(FoodItem foodItem: menu) {
-			System.out.println(foodItem);
+			i++;
+		    System.out.format(leftAlignFormat, i, foodItem.getName(), foodItem.getPrice());
 		}
-		System.out.println("------------------------------------");
-		
+		System.out.format("+------+---------------------------+------+%n");
 	}
 }

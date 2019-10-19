@@ -29,7 +29,8 @@ public class UserInterface {
 			String answerToMenuQuery = keyboard.next();
 			if (answerToMenuQuery.toLowerCase() == "yes" || answerToMenuQuery.toLowerCase().charAt(0) == 'y'
 					|| answerToMenuQuery.toLowerCase() == "yes, please." || answerToMenuQuery.toLowerCase() == "sure") {
-				Menu.displayMenu();
+				Menu menu = new Menu();
+				menu.displayMenu();
 				try {
 					TimeUnit.SECONDS.sleep(42);
 				} catch (InterruptedException e) {
@@ -38,7 +39,6 @@ public class UserInterface {
 					System.out.println("\nVeronica=> \t Would you like to place order?");
 					System.out.print("Customer=> \t ");
 					String answerToOrderQuery = keyboard.next();
-					int i = 0;
 					if (answerToOrderQuery.toLowerCase() == "yes" || answerToOrderQuery.toLowerCase().charAt(0) == 'y'
 							|| answerToOrderQuery.toLowerCase() == "yes, please."
 							|| answerToOrderQuery.toLowerCase() == "sure") {
@@ -57,7 +57,21 @@ public class UserInterface {
 						} catch (InterruptedException e) {
 							System.out.println("sleeped for 42 seconds");
 						} finally {
-							
+							System.out.println("\n Veronica=> \t Do you wish to give order?(yes/no):");
+							answerToOrderQuery = keyboard.next();
+							if (answerToOrderQuery.toLowerCase() == "yes" || answerToOrderQuery.toLowerCase().charAt(0) == 'y'
+									|| answerToOrderQuery.toLowerCase() == "yes, please."
+									|| answerToOrderQuery.toLowerCase() == "sure") {
+								System.out.println("\nVeronica=> \t Enter Order please.");
+								
+								System.out.println("\nVeronica=> \t From Main menu, what you would like to have?");
+								
+								
+								
+							}
+							else {
+								break;
+							}
 						}
 
 					}
