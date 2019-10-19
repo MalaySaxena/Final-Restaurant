@@ -43,16 +43,7 @@ public class RawMaterial {
 		ingredients.put(50, "Turmeric Powder");
 		ingredients.put(50, "Red Chilli Powder");
 		ingredients.put(50, "Vinegar");
-		ingredients.put(50, "Whole-wheat");
-		ingredients.put(50, "Whole-wheat");
-		ingredients.put(50, "Whole-wheat");
-		ingredients.put(50, "Whole-wheat");
-		ingredients.put(50, "Whole-wheat");
-		ingredients.put(50, "Whole-wheat");
-		ingredients.put(50, "Whole-wheat");
-		ingredients.put(50, "Whole-wheat");
-		ingredients.put(50, "Whole-wheat");
-		ingredients.put(50, "Whole-wheat");
+		
 	}
 	
 }
