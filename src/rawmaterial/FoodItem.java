@@ -25,10 +25,10 @@ public class FoodItem {
 
 	private String name;
 	private int price;
-	private boolean status;
+	private static boolean status;
 	private int preparationTime;
 
-	Hashtable<String, Integer> ingredients = new Hashtable<String, Integer>();
+	static Hashtable<String, Integer> ingredients = new Hashtable<String, Integer>();
 
 	// Iterator iterateName = rawMaterialName.iterator();
 	// Iterator iterateQuantity = rawMaterialQuantity.iterator();
@@ -44,11 +44,11 @@ public class FoodItem {
 		ingredients.put(name, quantity);
 	}
 
-	boolean checkStatus() {
+	public static boolean checkStatus(String foodItem) {
 		status = true;
 		ingredients.forEach((a, b) -> {
 			int checkQuantity = ingredients.get(a);
-			int checkWithQuantity = RawMaterial.ingredients.get(a);
+			int checkWithQuantity = RawMaterial.ingredients.get(foodItem);
 			if (checkQuantity > checkWithQuantity) {
 				status = false;
 			}
@@ -61,7 +61,7 @@ public class FoodItem {
 
 	@Override
 	public String toString() {
-		return name + price;
+		return name;
 	}
 
 	public int getPreparationTime() {

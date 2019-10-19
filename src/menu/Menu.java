@@ -199,4 +199,9 @@ public class Menu {
 		}
 		System.out.format("+------+---------------------------+------+%n");
 	}
+
+	public String getDishName(int foodItemNumber) {
+		String foodItem=menu.get(foodItemNumber).getName();
+		return foodItem;
+	}
 }
