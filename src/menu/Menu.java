@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import rawmaterial.FoodItem;
 
 public class Menu {
-	ArrayList<FoodItem> menu = new ArrayList<FoodItem>(16);
+	ArrayList<FoodItem> menu = new ArrayList<FoodItem>(17);
 	
 	FoodItem food = null;
 	
@@ -56,5 +56,7 @@ public class Menu {
 
     //15
     food = new FoodItem("Sandwich",30);	
-
+    
+    //16
+    food = new FoodItem("Sandwich",30);	
 }
