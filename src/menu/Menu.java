@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import rawmaterial.FoodItem;
 
 public class Menu {
-	ArrayList<FoodItem> menu = new ArrayList<FoodItem>(18);
+	static ArrayList<FoodItem> menu = new ArrayList<FoodItem>(18);
 
 	Menu(){
 		FoodItem food = null;
@@ -185,7 +185,7 @@ public class Menu {
 		
 	}
 	
-	public void displayMenu() {
+	public static void displayMenu() {
 		System.out.println("------------------------------------");
 		System.out.println("----------------MENU----------------");
 		System.out.println("------------------------------------");
