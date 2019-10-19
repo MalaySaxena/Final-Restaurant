@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import rawmaterial.FoodItem;
 
 public class Menu {
-	ArrayList<FoodItem> menu = new ArrayList<FoodItem>(21);
+	ArrayList<FoodItem> menu = new ArrayList<FoodItem>(18);
 
 	{
 		FoodItem food = null;
 
 		// 1 Sandwich
 		// i)
-		food = new FoodItem("Cheese Sandwich", 30);
+		food = new FoodItem("Cheese Sandwich", 25);
 		food.addRawMaterial("Cheese", 2);
 		food.addRawMaterial("Black pepper", 1);
 		food.addRawMaterial("Sandwhich Bread", 2);
@@ -29,7 +29,7 @@ public class Menu {
 
 		// 2 Pizza
 		// i)
-		food = new FoodItem("Onion Pizza", 30);
+		food = new FoodItem("Onion Pizza", 50);
 		food.addRawMaterial("Cheese", 2);
 		food.addRawMaterial("Black pepper", 1);
 		food.addRawMaterial("Onion", 1);
@@ -38,7 +38,7 @@ public class Menu {
 		menu.add(food);
 
 		// ii)
-		food = new FoodItem("Margheritta", 30);
+		food = new FoodItem("Margheritta", 50);
 		food.addRawMaterial("Cheese", 2);
 		food.addRawMaterial("Pizza Sauce", 1);
 		food.addRawMaterial("Black pepper", 1);
@@ -46,7 +46,7 @@ public class Menu {
 		menu.add(food);
 
 		// iii)
-		food = new FoodItem("Farm Fresh Pizza", 30);
+		food = new FoodItem("Farm Fresh Pizza", 80);
 		food.addRawMaterial("Cheese", 2);
 		food.addRawMaterial("Pizza Sauce", 1);
 		food.addRawMaterial("Black pepper", 1);
@@ -59,7 +59,7 @@ public class Menu {
 
 		// 3 Chinese
 		// i)
-		food = new FoodItem("Noodles", 30);
+		food = new FoodItem("Noodles", 60);
 		food.addRawMaterial("Dry Noodles", 2);
 		food.addRawMaterial("Green Capsicum", 1);
 		food.addRawMaterial("Onion", 1);
@@ -69,7 +69,7 @@ public class Menu {
 		menu.add(food);
 
 		// ii)
-		food = new FoodItem("Manchurian", 30);
+		food = new FoodItem("Manchurian", 60);
 		food.addRawMaterial("Manchrian balls", 2);
 		food.addRawMaterial("Red Chilli Sauce", 1);
 		food.addRawMaterial("Green Capsicum", 1);
@@ -79,48 +79,18 @@ public class Menu {
 		menu.add(food);
 
 		// iii)
-		food = new FoodItem("Fried Rice", 30);
+		food = new FoodItem("Fried Rice", 50);
 		food.addRawMaterial("Boiled Rice", 2);
 		food.addRawMaterial("Red Chilli Sauce", 1);
 		food.addRawMaterial("Green Capsicum", 1);
 		food.addRawMaterial("Oil", 1);
-		food.addRawMaterial("Onion", 1);
-		food.addRawMaterial("Vinegar", 1);
-		menu.add(food);
-		// 3 Chinese
-		// i)
-		food = new FoodItem("Noodles", 30);
-		food.addRawMaterial("Dry Noodles", 2);
-		food.addRawMaterial("Oil", 1);
-		food.addRawMaterial("Green Capsicum", 1);
-		food.addRawMaterial("Onion", 1);
-		food.addRawMaterial("Vinegar", 1);
-		food.addRawMaterial("Red Chilli Sauce", 1);
-		menu.add(food);
-
-		// ii)
-		food = new FoodItem("Manchurian", 30);
-		food.addRawMaterial("Manchrian balls", 2);
-		food.addRawMaterial("Red Chilli Sauce", 1);
-		food.addRawMaterial("Oil", 1);
-		food.addRawMaterial("Green Capsicum", 1);
-		food.addRawMaterial("Onion", 1);
-		food.addRawMaterial("Vinegar", 1);
-		menu.add(food);
-
-		// iii)
-		food = new FoodItem("Fried Rice", 30);
-		food.addRawMaterial("Boiled Rice", 2);
-		food.addRawMaterial("Red Chilli Sauce", 1);
-		food.addRawMaterial("Oil", 1);
-		food.addRawMaterial("Green Capsicum", 1);
 		food.addRawMaterial("Onion", 1);
 		food.addRawMaterial("Vinegar", 1);
 		menu.add(food);
 		
 		// 4 Main Course 
 		// i)
-		food = new FoodItem("Palak Paneer", 30);
+		food = new FoodItem("Palak Paneer", 60);
 		food.addRawMaterial("Paneer", 2);
 		food.addRawMaterial("Oil", 1);
 		food.addRawMaterial("Palak", 1);
@@ -132,7 +102,7 @@ public class Menu {
 		menu.add(food);
 
 		// ii)
-		food = new FoodItem("Paneer Butter Masala", 30);
+		food = new FoodItem("Paneer Butter Masala", 80);
 		food.addRawMaterial("Paneer", 2);
 		food.addRawMaterial("Oil", 1);
 		food.addRawMaterial("Tomato", 2);
@@ -145,7 +115,7 @@ public class Menu {
 		menu.add(food);
 
 		// iii)
-		food = new FoodItem("Cauliflower Masala", 30);
+		food = new FoodItem("Cauliflower Masala", 40);
 		food.addRawMaterial("Cauliflower", 2);
 		food.addRawMaterial("Tomato", 2);
 		food.addRawMaterial("Oil", 1);
@@ -158,7 +128,7 @@ public class Menu {
 		menu.add(food);
 		
 		// iv)
-		food = new FoodItem("Aloo Masala", 30);
+		food = new FoodItem("Aloo Masala", 45);
 		food.addRawMaterial("Potato", 2);
 		food.addRawMaterial("Tomato", 2);
 		food.addRawMaterial("Butter", 2);

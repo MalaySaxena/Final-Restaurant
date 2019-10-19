@@ -35,7 +35,7 @@ public class FoodItem {
 		status = true;
 		ingredients.forEach((a,b)->{
 			int checkQuantity=ingredients.get(a);
-			int checkWithQuantity=rawIngredient.ingredients.get(a);
+			int checkWithQuantity=RawMaterial.ingredients.get(a);
 			if(checkQuantity>checkWithQuantity)
 			{
 				status = false;
