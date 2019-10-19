@@ -1,5 +1,6 @@
 package UI;
 
+import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -32,7 +33,7 @@ public class UserInterface {
 				Menu menu = new Menu();
 				menu.displayMenu();
 				try {
-					TimeUnit.SECONDS.sleep(42);
+					TimeUnit.SECONDS.sleep(42); //
 				} catch (InterruptedException e) {
 					System.out.println("sleeped for 42 seconds");
 				} finally {
@@ -42,9 +43,25 @@ public class UserInterface {
 					if (answerToOrderQuery.toLowerCase() == "yes" || answerToOrderQuery.toLowerCase().charAt(0) == 'y'
 							|| answerToOrderQuery.toLowerCase() == "yes, please."
 							|| answerToOrderQuery.toLowerCase() == "sure") {
-						System.out.println("\nVeronica=> \t Enter Order please.");
+						System.out.println("Veronica=> \t May I have your name please.");
+						String customerName = keyboard.next();
 						
-						System.out.println("\nVeronica=> \t From Main menu, what you would like to have?");
+						System.out.println("Veronica=> \t Also, May I have your mobile number please.");
+						String customerMobileNumber = keyboard.next();
+						
+						System.out.println("Veronica=> \t Enter Order please.");
+						Random r = new Random();
+						int tableNumber = r.nextInt(10) + 1;
+						System.out.println("Veronica=> \t Your Table number is " + tableNumber);
+						
+						System.out.println("Veronica=> \t From Main menu, what you would like to have?");
+						while(true) {
+							System.out.print(customerName+"=> \t ");
+							int foodItemNumber = keyboard.nextInt();
+							break;
+						}
+						System.out.println("\nVeronica=> \t Your order is being prepared?");
+						
 						
 						
 						
