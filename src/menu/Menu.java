@@ -12,13 +12,13 @@ public class Menu {
 
 		// 1 Sandwich
 		// i)
-		food = new FoodItem("Cheese Sandwich", 25);
+		food = new FoodItem("Cheese Sandwich", 25,35);
 		food.addRawMaterial("Cheese", 2);
 		food.addRawMaterial("Black pepper", 1);
 		food.addRawMaterial("Sandwhich Bread", 2);
 		menu.add(food);
 		// ii)
-		food = new FoodItem("Veg Sandwich", 30);
+		food = new FoodItem("Veg Sandwich", 30,35);
 		food.addRawMaterial("Tomato", 2);
 		food.addRawMaterial("Onion", 2);
 		food.addRawMaterial("Cabbage", 1);
@@ -29,7 +29,7 @@ public class Menu {
 
 		// 2 Pizza
 		// i)
-		food = new FoodItem("Onion Pizza", 50);
+		food = new FoodItem("Onion Pizza", 50,85);
 		food.addRawMaterial("Cheese", 2);
 		food.addRawMaterial("Black pepper", 1);
 		food.addRawMaterial("Onion", 1);
@@ -38,7 +38,7 @@ public class Menu {
 		menu.add(food);
 
 		// ii)
-		food = new FoodItem("Margheritta", 50);
+		food = new FoodItem("Margheritta", 50,90);
 		food.addRawMaterial("Cheese", 2);
 		food.addRawMaterial("Pizza Sauce", 1);
 		food.addRawMaterial("Black pepper", 1);
@@ -46,7 +46,7 @@ public class Menu {
 		menu.add(food);
 
 		// iii)
-		food = new FoodItem("Farm Fresh Pizza", 80);
+		food = new FoodItem("Farm Fresh Pizza", 80,95);
 		food.addRawMaterial("Cheese", 2);
 		food.addRawMaterial("Pizza Sauce", 1);
 		food.addRawMaterial("Black pepper", 1);
@@ -59,7 +59,7 @@ public class Menu {
 
 		// 3 Chinese
 		// i)
-		food = new FoodItem("Noodles", 60);
+		food = new FoodItem("Noodles", 60,46);
 		food.addRawMaterial("Dry Noodles", 2);
 		food.addRawMaterial("Green Capsicum", 1);
 		food.addRawMaterial("Onion", 1);
@@ -69,7 +69,7 @@ public class Menu {
 		menu.add(food);
 
 		// ii)
-		food = new FoodItem("Manchurian", 60);
+		food = new FoodItem("Manchurian", 60,50);
 		food.addRawMaterial("Manchrian balls", 2);
 		food.addRawMaterial("Red Chilli Sauce", 1);
 		food.addRawMaterial("Green Capsicum", 1);
@@ -79,7 +79,7 @@ public class Menu {
 		menu.add(food);
 
 		// iii)
-		food = new FoodItem("Fried Rice", 50);
+		food = new FoodItem("Fried Rice", 50,38);
 		food.addRawMaterial("Boiled Rice", 2);
 		food.addRawMaterial("Red Chilli Sauce", 1);
 		food.addRawMaterial("Green Capsicum", 1);
@@ -90,7 +90,7 @@ public class Menu {
 		
 		// 4 Main Course 
 		// i)
-		food = new FoodItem("Palak Paneer", 60);
+		food = new FoodItem("Palak Paneer", 60,70);
 		food.addRawMaterial("Paneer", 2);
 		food.addRawMaterial("Oil", 1);
 		food.addRawMaterial("Palak", 1);
@@ -102,7 +102,7 @@ public class Menu {
 		menu.add(food);
 
 		// ii)
-		food = new FoodItem("Paneer Butter Masala", 80);
+		food = new FoodItem("Paneer Butter Masala", 80,67);
 		food.addRawMaterial("Paneer", 2);
 		food.addRawMaterial("Oil", 1);
 		food.addRawMaterial("Tomato", 2);
@@ -115,7 +115,7 @@ public class Menu {
 		menu.add(food);
 
 		// iii)
-		food = new FoodItem("Cauliflower Masala", 40);
+		food = new FoodItem("Cauliflower Masala", 40,82);
 		food.addRawMaterial("Cauliflower", 2);
 		food.addRawMaterial("Tomato", 2);
 		food.addRawMaterial("Oil", 1);
@@ -128,7 +128,7 @@ public class Menu {
 		menu.add(food);
 		
 		// iv)
-		food = new FoodItem("Aloo Masala", 45);
+		food = new FoodItem("Aloo Masala", 45,78);
 		food.addRawMaterial("Potato", 2);
 		food.addRawMaterial("Tomato", 2);
 		food.addRawMaterial("Butter", 2);
@@ -142,27 +142,27 @@ public class Menu {
 		
 		//Roti
 		// i)
-		food = new FoodItem("Plain Roti", 5);
+		food = new FoodItem("Plain Roti", 5,20);
 		food.addRawMaterial("Normal Atta", 2);
 		food.addRawMaterial("Salt", 1);
 		menu.add(food);
 
 		// ii)
-		food = new FoodItem("Butter Roti", 7);
+		food = new FoodItem("Butter Roti", 7,22);
 		food.addRawMaterial("Butter", 2);
 		food.addRawMaterial("Normal Atta", 2);
 		food.addRawMaterial("Salt", 1);
 		menu.add(food);
 
 		// iii)
-		food = new FoodItem("Butter Naan", 15);
+		food = new FoodItem("Butter Naan", 15,25);
 		food.addRawMaterial("Butter", 2);
 		food.addRawMaterial("Whole Atta", 2);
 		food.addRawMaterial("Salt", 1);
 		menu.add(food);
 		
 		// iv)
-		food = new FoodItem("Tandoori Roti", 10);
+		food = new FoodItem("Tandoori Roti", 10,30);
 		food.addRawMaterial("Butter", 2);
 		food.addRawMaterial("Whole Atta", 2);
 		food.addRawMaterial("Salt", 1);
@@ -170,13 +170,13 @@ public class Menu {
 		
 		//Rice
 		// i)
-		food = new FoodItem("Plain Rice", 30);
+		food = new FoodItem("Plain Rice", 30,15);
 		food.addRawMaterial("Boiled Rice", 2);
 		food.addRawMaterial("Salt", 1);
 		menu.add(food);
 
 		// ii)
-		food = new FoodItem("Jeera Rice", 50);
+		food = new FoodItem("Jeera Rice", 50,20);
 		food.addRawMaterial("Boiled Rice", 2);
 		food.addRawMaterial("Oil", 1);
 		food.addRawMaterial("Salt", 1);
