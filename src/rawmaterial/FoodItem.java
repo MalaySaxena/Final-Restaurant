@@ -37,7 +37,7 @@ public class FoodItem {
 	public FoodItem(String name, int price,int preparationTime) {
 		this.name = name;
 		this.price = price;
-		this.preparationTime=preparationTime;
+		this.setPreparationTime(preparationTime);
 	}
 
 	public void addRawMaterial(String name, int quantity) {
@@ -62,6 +62,14 @@ public class FoodItem {
 	@Override
 	public String toString() {
 		return name + price;
+	}
+
+	public int getPreparationTime() {
+		return preparationTime;
+	}
+
+	public void setPreparationTime(int preparationTime) {
+		this.preparationTime = preparationTime;
 	}
 
 }

@@ -56,11 +56,11 @@ public class UserInterface {
 						
 						System.out.println("Veronica=> \t From Main menu, what you would like to have?");
 						while(true) {
-							System.out.print(customerName+"=> \t ");
+							System.out.print(customerName+" ji=> \t ");
 							int foodItemNumber = keyboard.nextInt();
 							break;
 						}
-						System.out.println("\nVeronica=> \t Your order is being prepared?");
+						System.out.println("\nVeronica=> \t Your order is being prepared");
 						
 						
 						
