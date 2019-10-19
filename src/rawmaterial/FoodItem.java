@@ -26,6 +26,7 @@ public class FoodItem {
 	private String name;
 	private int price;
 	private boolean status;
+	private int preparationTime;
 
 	Hashtable<String, Integer> ingredients = new Hashtable<String, Integer>();
 
@@ -33,9 +34,10 @@ public class FoodItem {
 	// Iterator iterateQuantity = rawMaterialQuantity.iterator();
 	RawMaterial rawIngredient = new RawMaterial();
 
-	public FoodItem(String name, int price) {
+	public FoodItem(String name, int price,int preparationTime) {
 		this.name = name;
 		this.price = price;
+		this.preparationTime=preparationTime;
 	}
 
 	public void addRawMaterial(String name, int quantity) {
