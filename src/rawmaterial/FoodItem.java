@@ -1,6 +1,7 @@
 package rawmaterial;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.Iterator;
 
 
@@ -10,8 +11,7 @@ public class FoodItem {
 	private int price;
     private boolean status;
 	
-	ArrayList<String> rawMaterialName = new ArrayList<String>();
-	ArrayList<Integer> rawMaterialQuantity = new ArrayList<Integer>();
+    static Hashtable<Integer,String> ingredients = new Hashtable<Integer,String>();
 	
 	//Iterator iterateName = rawMaterialName.iterator();
 	//Iterator iterateQuantity = rawMaterialQuantity.iterator();
@@ -26,8 +26,7 @@ public class FoodItem {
 	
 	void addRawMaterial(String name, int quantity)
 	{
-		rawMaterialName.add(name);
-		rawMaterialQuantity.add(quantity);
+		ingredients.put(quantity,name);
 	}
 	
 	boolean checkStatus()
