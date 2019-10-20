@@ -118,7 +118,7 @@ public class UserInterface {
 				System.out.println("Veronica=> \t 1. Update FoodItem in Menu.");
 				System.out.println("Veronica=> \t 2. Update Raw Materials");
 				System.out.println("Veronica=> \t Enter your choice(1-2)");
-				System.out.print("Boss => \t"); 
+				System.out.print("Boss => \t");
 				int updateQuery = keyboard.nextInt();
 				switch (updateQuery) {
 				case 1:
@@ -127,8 +127,7 @@ public class UserInterface {
 					break;
 				}
 
-			}
-			else {
+			} else {
 				System.out.println("Veronica=> \t Don't be snoopy, else I'll call for security.");
 			}
 			break;

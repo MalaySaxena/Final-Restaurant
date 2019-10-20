@@ -34,7 +34,7 @@ public class FoodItem {
 	// Iterator iterateQuantity = rawMaterialQuantity.iterator();
 	RawMaterial rawIngredient = new RawMaterial();
 
-	public FoodItem(String name, int price,int preparationTime) {
+	public FoodItem(String name, int price, int preparationTime) {
 		this.name = name;
 		this.price = price;
 		this.setPreparationTime(preparationTime);
