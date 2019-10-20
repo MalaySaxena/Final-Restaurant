@@ -5,7 +5,7 @@ import menu.Menu;
 import rawmaterial.FoodItem;
 
 public class Order extends FoodItem {
-	static ArrayList<Integer> order = new ArrayList< Integer>();
+	static ArrayList<Integer> order = new ArrayList<Integer>();
 
 	public Order(String name, int price, int preparationTime) {
 		super(name, price, preparationTime);
@@ -30,7 +30,7 @@ public class Order extends FoodItem {
 		int time = 0;
 		for(Integer i : order)
 		{
-			int currentOrderTime = menu.get(i).getPreparationTime();
+			int currentOrderTime = Menu.menu.get(i).getPreparationTime();
 			time = time + currentOrderTime;
 		}
 		return time;
