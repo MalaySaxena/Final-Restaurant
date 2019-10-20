@@ -34,7 +34,6 @@ public class UserInterface {
 		if (parser.format(now).compareTo(("10:00")) > 0 && parser.format(now).compareTo(("21:00")) < 0) {
 			System.out.println("-----------------------------------------");
 			System.out.println("-----------------------------------------");
-			
 
 			Customer customer = new Customer();
 			System.out.println("Welcome, I am Veronica, your assistant at Restaurent.");
@@ -44,6 +43,7 @@ public class UserInterface {
 			if (responseYes(answerToQuery)) {
 				Menu menu = new Menu();
 				menu.displayMenu();
+				processing();
 				// to decide what user would like to have, he/she is given a 10 second break.
 				try {
 					TimeUnit.SECONDS.sleep(10); //
@@ -109,8 +109,7 @@ public class UserInterface {
 		System.out.println("--------------------------------------------");
 
 		keyboard.close();
-	
-	
+
 	}
 
 	static boolean responseYes(String answerToQuery) {
@@ -118,6 +117,26 @@ public class UserInterface {
 				|| answerToQuery.toLowerCase() == "yes, please." || answerToQuery.toLowerCase() == "sure")
 			return true;
 		return false;
+	}
+
+	public static void processing() {
+		Thread t = new Thread() {
+			public void run() {
+				System.out.print("Processing [");
+				for (int i = 0; i < 100; i+=3) {
+					System.out.print("=");
+					if(i==99) {
+						System.out.println(">] 100% \nProcessing done");		
+					}
+					try {
+						Thread.sleep(300);
+					} catch (Exception e) {
+					}
+
+				}
+			}
+		};
+		t.start();
 	}
 
 	static void collectOrder(Customer customer, Scanner keyboard, Menu menu) {
@@ -164,7 +183,7 @@ public class UserInterface {
 			System.out.println("\nVeronica=> \t Your change is Rs. " + (billAmount - bill) + "/-");
 
 		System.out.println("Veronica=> \t Your order is being prepared");
-
+		processing();
 		// Order now collected is being prepared so, it got stop for a particular time
 		try {
 			TimeUnit.SECONDS.sleep(Order.checkPreparationTime()); //
