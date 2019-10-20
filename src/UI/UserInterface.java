@@ -34,9 +34,9 @@ public class UserInterface {
 				Menu menu = new Menu();
 				menu.displayMenu();
 				try {
-					TimeUnit.SECONDS.sleep(30); //
+					TimeUnit.SECONDS.sleep(10); //
 				} catch (InterruptedException e) {
-					System.out.println("sleeped for 30 seconds");
+					System.out.println("sleeped for 10 seconds");
 				} finally {
 					System.out.println("\nVeronica=> \t Would you like to place order?");
 					System.out.print("Customer=> \t ");
@@ -48,9 +48,9 @@ public class UserInterface {
 					else {
 						try {
 							System.out.println("\n Veronica=> \t Okay I will collect order after few some time?");
-							TimeUnit.SECONDS.sleep(42);
+							TimeUnit.SECONDS.sleep(20);
 						} catch (InterruptedException e) {
-							System.out.println("sleeped for 42 seconds");
+							System.out.println("sleeped for 20 seconds");
 						} finally {
 							System.out.println("\n Veronica=> \t Do you wish to give order?(yes/no):");
 							answerToQuery = keyboard.next();
