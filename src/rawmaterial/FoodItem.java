@@ -1,13 +1,10 @@
 package rawmaterial;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 /*
  * This is Food Item class.
  * Which contain whereas fooditem link with raw materials. 
  * */
-import java.util.Hashtable;
-import java.util.Set;
 
 import menu.Menu;
 
