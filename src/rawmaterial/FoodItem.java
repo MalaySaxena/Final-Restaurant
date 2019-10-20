@@ -1,10 +1,7 @@
 package rawmaterial;
 
-import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 public class FoodItem {
 

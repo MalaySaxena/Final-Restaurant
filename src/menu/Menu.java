@@ -204,4 +204,9 @@ public class Menu {
 		String foodItem = menu.get(foodItemNumber).getName();
 		return foodItem;
 	}
+
+	public Integer getDishPrice(int foodItemNumber) {
+		int foodItem = menu.get(foodItemNumber).getPrice();
+		return foodItem;
+	}
 }

@@ -62,7 +62,7 @@ public class UserInterface {
 						while (true) {
 							System.out.print(customer.getCustomerName() + " ji=> \t ");
 							int foodItemNumber = keyboard.nextInt();
-							Order.collectOrder(foodItemNumber);
+							Order.collectOrder( foodItemNumber);
 							System.out.println("\nVeronica=> \t Ok," + menu.getDishName(foodItemNumber)
 									+ " added, so would you like to have more (yes/no)?");
 							answerToOrderQuery = keyboard.next();
@@ -71,12 +71,12 @@ public class UserInterface {
 						}
 						
 						System.out.println("Veronica=> \t Here is your Bill.");
-						Order.placeBill();
+						int bill=Order.placeBill(customer.getCustomerName(), customer.getCustomerMobileNumber(), tableNumber);
 						System.out.println("Veronica=> \t Enter Amount displayed in Bill.");
 						System.out.print("Customer=> \t ");
 						int billAmount = keyboard.nextInt();
-						if(billAmount==Order.billAmount()) 
-							System.out.println("\nVeronica=> \t Your change is" +(Order.billAmount()-billAmount));	
+						if(billAmount==bill) 
+							System.out.println("\nVeronica=> \t Your change is Rs. " +(bill-billAmount) +"/-");	
 							
 						System.out.println("Veronica=> \t Your order is being prepared");
 						
