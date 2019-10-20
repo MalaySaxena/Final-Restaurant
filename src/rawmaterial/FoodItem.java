@@ -3,6 +3,7 @@ package rawmaterial;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 public class FoodItem {
@@ -46,7 +47,7 @@ public class FoodItem {
 
 	public static boolean checkStatus(String foodItem) {
 		status = true;
-		ingredients.forEach((a, b) -> {
+		/*ingredients.forEach((a, b) -> {
 			int checkQuantity = ingredients.get(a);
 			int checkWithQuantity = RawMaterial.ingredients.get(foodItem);
 			if (checkQuantity > checkWithQuantity) {
@@ -54,7 +55,11 @@ public class FoodItem {
 			}
 
 		});
-
+*/
+		 for(Map.Entry<String,Integer> entry: RawMaterial.ingredients.entrySet()){
+			 
+	           	
+		}
 		return status;
 
 	}

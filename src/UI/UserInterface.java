@@ -66,11 +66,29 @@ public class UserInterface {
 							System.out.println("\nVeronica=> \t Ok," + menu.getDishName(foodItemNumber)
 									+ " added, so would you like to have more (yes/no)?");
 							answerToOrderQuery = keyboard.next();
-							if (answerToOrderQuery.toLowerCase() == "no")
+							if (answerToOrderQuery.equalsIgnoreCase("no"))
 								break;
 						}
-						System.out.println("\nVeronica=> \t Your order is being prepared");
-
+						
+						System.out.println("Veronica=> \t Here is your Bill.");
+						Order.placeBill();
+						System.out.println("Veronica=> \t Enter Amount displayed in Bill.");
+						System.out.print("Customer=> \t ");
+						int billAmount = keyboard.nextInt();
+						if(billAmount==Order.billAmount()) 
+							System.out.println("\nVeronica=> \t Your change is" +(Order.billAmount()-billAmount));	
+							
+						System.out.println("Veronica=> \t Your order is being prepared");
+						
+						try {
+							TimeUnit.SECONDS.sleep(Order.checkPreparationTime()); //
+						} catch (InterruptedException e) {
+							System.out.println("sleeped for "+Order.checkPreparationTime() +" seconds");
+						} finally {
+							
+							System.out.println("Veronica=> \t Enjoy your meal");
+									
+						}
 					}
 
 					else {

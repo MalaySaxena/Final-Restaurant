@@ -26,9 +26,20 @@ public class Order extends FoodItem{
 			
 	}
 
-	private static void checkPreparationTime() {
+	public static int checkPreparationTime() {
+		// TODO Auto-generated method stub
+		int time = 0;
+		return time;
+	}
+
+	public static void placeBill() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public static int billAmount() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	
