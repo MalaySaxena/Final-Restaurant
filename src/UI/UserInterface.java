@@ -1,5 +1,8 @@
 package UI;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -10,8 +13,13 @@ import order.Customer;
 
 public class UserInterface {
 	public static void main(String[] args) {
+		SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
+		Timestamp now = new Timestamp(new Date().getTime());
+	    
 		Scanner keyboard = new Scanner(System.in);
+		
 		System.out.println("Welcome To GS Restaurent");
+		if (parser.format(now).compareTo(("10:00"))>0 && parser.format(now).compareTo(("21:00"))<0) {
 		System.out.println("-----------------------------------------");
 		System.out.println("-----------------------------------------");
 
@@ -119,6 +127,10 @@ public class UserInterface {
 		System.out.println("--------------------------------------------");
 
 		keyboard.close();
+		}
+		else {
+			System.out.println("Shop is closed Now, come between 10am - 9pm");
+		}
 
 	}
 
