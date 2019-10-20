@@ -25,9 +25,14 @@ public class Order extends FoodItem {
 	}
 
 	// max prep time to be added
-	public static int checkPreparationTime() {
+	public static int checkPreparationTime(ArrayList<Integer> order, ArrayList<FoodItem> menu) {
 		// TODO Auto-generated method stub
 		int time = 0;
+		for(Integer i : order)
+		{
+			int currentOrderTime = menu.get(i).getPreparationTime();
+			time = time + currentOrderTime;
+		}
 		return time;
 	}
 
