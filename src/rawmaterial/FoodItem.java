@@ -42,8 +42,6 @@ public class FoodItem {
 
 	static Hashtable<String, Integer> ingredients = new Hashtable<String, Integer>();
 
-	// Iterator iterateName = rawMaterialName.iterator();
-	// Iterator iterateQuantity = rawMaterialQuantity.iterator();
 	RawMaterial rawIngredient = new RawMaterial();
 
 	public FoodItem(String name, int price, int preparationTime) {
@@ -69,7 +67,7 @@ public class FoodItem {
 		 * });
 		 */
 		for (Map.Entry<String, Integer> entry : RawMaterial.ingredients.entrySet()) {
-
+			
 		}
 		return status;
 

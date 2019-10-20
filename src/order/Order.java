@@ -4,6 +4,8 @@ package order;
  * It is extend of FoodItem class.
  * */
 import java.util.ArrayList;
+import java.util.Random;
+
 import menu.Menu;
 import rawmaterial.FoodItem;
 
@@ -19,9 +21,12 @@ public class Order extends FoodItem {
 	// available in inventory or not.
 	public static boolean collectOrder(int foodItemNumber) {
 		Menu menu = new Menu();
-		if (!checkStatus(menu.getDishName(foodItemNumber)))
+		if (!checkStatus(menu.getDishName(foodItemNumber))) {
+			Random r = new Random();
+			System.out.println("Sorry this" + menu.getDishName(foodItemNumber)
+					+ "is unavailable, Check our top other dishes " + menu.getDishName(r.nextInt(18) + 1));
 			return false;
-		else {
+		} else {
 			order.add(foodItemNumber); // if there is availability we add the foodItemNumber in Order ArrayList.
 		}
 		return true;
