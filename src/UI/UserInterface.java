@@ -1,5 +1,9 @@
 package UI;
 
+/*
+ * This class, contains main method.
+ * This class will interact with user.
+ * */
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,14 +16,21 @@ import order.Order;
 import order.Customer;
 
 public class UserInterface {
-	
+
 	public static void main(String[] args) {
+		// This format the time in form of HH and MM
 		SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
+
+		// to get the current time of system
 		Timestamp now = new Timestamp(new Date().getTime());
 
+		// creating object of Scanner as keyboard, so it's easier to understand user is
+		// giving input through System keyboard
 		Scanner keyboard = new Scanner(System.in);
 
 		System.out.println("Welcome To GS Restaurent");
+
+		// If the time of entry is between 10am to 9pm cafe is OPEN
 		if (parser.format(now).compareTo(("10:00")) > 0 && parser.format(now).compareTo(("21:00")) < 0) {
 			System.out.println("-----------------------------------------");
 			System.out.println("-----------------------------------------");
@@ -42,6 +53,7 @@ public class UserInterface {
 				if (responseYes(answerToQuery)) {
 					Menu menu = new Menu();
 					menu.displayMenu();
+					// to decide what user would like to have, he/she is given a 10 second break.
 					try {
 						TimeUnit.SECONDS.sleep(10); //
 					} catch (InterruptedException e) {
@@ -50,10 +62,12 @@ public class UserInterface {
 						System.out.println("\nVeronica=> \t Would you like to place order?");
 						System.out.print("Customer=> \t ");
 						answerToQuery = keyboard.next();
+
+						// if the answer is yes, then we will proceed to collect order
 						if (responseYes(answerToQuery)) {
 							collectOrder(customer, keyboard, menu);
 						}
-
+						// else we will wait for 20 seconds for final time
 						else {
 							try {
 								System.out.println("\n Veronica=> \t Okay I will collect order after few some time?");
@@ -128,7 +142,10 @@ public class UserInterface {
 			System.out.println("--------------------------------------------");
 
 			keyboard.close();
-		} else {
+		}
+
+		// if shop is closed
+		else {
 			System.out.println("Shop is closed Now, come between 10am - 9pm");
 		}
 
@@ -143,18 +160,22 @@ public class UserInterface {
 
 	static void collectOrder(Customer customer, Scanner keyboard, Menu menu) {
 		System.out.println("Veronica=> \t May I have your name please.");
+		// To get customer Name
 		System.out.print("Customer=> \t ");
 		customer.setCustomerName(keyboard.next());
 
+		// To get customer mobile number
 		System.out.println("\nVeronica=> \t Also, May I have your mobile number please.");
 		System.out.print(customer.getCustomerName() + " ji=> \t ");
 		customer.setCustomerMobileNumber(keyboard.next());
 
 		System.out.println("\nVeronica=> \t Enter Order please.");
 		Random r = new Random();
+		// creating a random variable for table Number
 		int tableNumber = r.nextInt(10) + 1;
 		System.out.println("Veronica=> \t Your Table number is " + tableNumber);
 
+		// asking user to start its order
 		System.out.println("Veronica=> \t From Main menu, what you would like to have?");
 		while (true) {
 			System.out.print(customer.getCustomerName() + " ji=> \t ");
@@ -167,25 +188,29 @@ public class UserInterface {
 				break;
 		}
 
+		// display bill of the user
 		System.out.println("Veronica=> \t Here is your Bill.");
 		int bill = Order.placeBill(customer.getCustomerName(), customer.getCustomerMobileNumber(), tableNumber);
 		System.out.println("Veronica=> \t Enter Amount displayed in Bill.");
+
+		// get the bill amount
 		System.out.print("Customer=> \t ");
 		int billAmount = keyboard.nextInt();
+
+		// if bill amount is grater than actual bill, return him bill.
 		if (billAmount >= bill)
 			System.out.println("\nVeronica=> \t Your change is Rs. " + (billAmount - bill) + "/-");
 
 		System.out.println("Veronica=> \t Your order is being prepared");
 
+		// Order now collected is being prepared so, it got stop for a particular time
 		try {
 			TimeUnit.SECONDS.sleep(Order.checkPreparationTime()); //
 		} catch (InterruptedException e) {
 			System.out.println("sleeped for " + Order.checkPreparationTime() + " seconds");
 		} finally {
-
+			// finally enjoy the meal
 			System.out.println("Veronica=> \t Enjoy your meal");
-
 		}
-
 	}
 }

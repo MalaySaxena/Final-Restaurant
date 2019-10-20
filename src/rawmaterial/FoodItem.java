@@ -1,5 +1,9 @@
 package rawmaterial;
 
+/*
+ * This is Food Item class.
+ * Which contain whereas fooditem link with raw materials. 
+ * */
 import java.util.Hashtable;
 import java.util.Map;
 
@@ -48,10 +52,13 @@ public class FoodItem {
 		this.setPreparationTime(preparationTime);
 	}
 
+	// This function add Raw Material in a Particular foodItem.
 	public void addRawMaterial(String name, int quantity) {
 		ingredients.put(name, quantity);
 	}
 
+	// this check status whether the foodItem will be available or not, by checking
+	// quantity
 	public static boolean checkStatus(String foodItem) {
 		status = true;
 		/*

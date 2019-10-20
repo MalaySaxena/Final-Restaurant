@@ -1,5 +1,11 @@
 package rawmaterial;
 
+/*
+ * This is a RawMaterial class.
+ * It contains all the rawmaterial currently present in the inventory.
+ * those are stored in an HashTable of type <String, Integer> 
+ * where string = name and integer = quantity of rawmaterial 
+ * */
 import java.util.Hashtable;
 
 public class RawMaterial {
