@@ -1,11 +1,15 @@
 package rawmaterial;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 /*
  * This is Food Item class.
  * Which contain whereas fooditem link with raw materials. 
  * */
 import java.util.Hashtable;
 import java.util.Set;
+
+import menu.Menu;
 
 public class FoodItem {
 
@@ -39,44 +43,45 @@ public class FoodItem {
 	public void setPreparationTime(int preparationTime) {
 		this.preparationTime = preparationTime;
 	}
-
-	static Hashtable<String, Integer> ingredients = new Hashtable<String, Integer>();
-
+	static ArrayList<String> ingredientName = new ArrayList<String>();
+	static ArrayList<Integer> ingredientQuantity = new ArrayList<Integer>();
+		
 	RawMaterial rawIngredient = new RawMaterial();
-
+	static int left=0;
+	static int right=0;
+	static ArrayList<Integer> Left = new ArrayList<Integer>();
+	static ArrayList<Integer> Right = new ArrayList<Integer>();
 	public FoodItem(String name, int price, int preparationTime) {
 		this.name = name;
 		this.price = price;
 		this.setPreparationTime(preparationTime);
+		Left.add(left);
+		Right.add(right);
+		left=right;
 	}
 
 	// This function add Raw Material in a Particular foodItem.
 	public void addRawMaterial(String name, int quantity) {
-		ingredients.put(name, quantity);
+		ingredientName.add(name);
+		ingredientQuantity.add(quantity);
+		right++;
 	}
 
 	// this check status whether the foodItem will be available or not, by checking
 	// quantity
-	public static boolean checkStatus(String foodItem) {
+	public static boolean checkStatus(int foodItemNumber) {
 		status = true;
-		/*
-		 * ingredients.forEach((a, b) -> { int checkQuantity = ingredients.get(a); int
-		 * checkWithQuantity = RawMaterial.ingredients.get(foodItem); if (checkQuantity
-		 * > checkWithQuantity) { status = false; }
-		 * 
-		 * });
-		 */
-
-		Set<String> keys = ingredients.keySet();
-		for (String key : keys) {
-			int checkQuantity = ingredients.get(key);
-			int checkWithQuantity = RawMaterial.ingredients.get(foodItem);
+		Menu menu = new Menu();
+		for (int i =Left.get(foodItemNumber); i<Right.get(foodItemNumber); i++) {
+			int checkQuantity = ingredientQuantity.get(i);
+			int checkWithQuantity = RawMaterial.ingredients.get(menu.getDishName(foodItemNumber));
 			if (checkQuantity > checkWithQuantity) {
 				status = false;
 				return status;
 			}
 
 		}
+		
 		return status;
 
 	}

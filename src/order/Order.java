@@ -21,7 +21,7 @@ public class Order extends FoodItem {
 	// available in inventory or not.
 	public static boolean collectOrder(int foodItemNumber) {
 		Menu menu = new Menu();
-		if (!checkStatus(menu.getDishName(foodItemNumber))) {
+		if (!checkStatus((foodItemNumber))) {
 			Random r = new Random();
 			System.out.println("Sorry this" + menu.getDishName(foodItemNumber)
 					+ "is unavailable, Check our top other dishes " + menu.getDishName(r.nextInt(18) + 1));
@@ -39,7 +39,7 @@ public class Order extends FoodItem {
 
 		Menu menu = new Menu();
 		for (Integer i : order) {
-			int currentOrderTime = Menu.menu.getDishPreparationTime(i);
+			int currentOrderTime = menu.getDishPreparationTime(i);
 
 			time = time + currentOrderTime;
 		}
