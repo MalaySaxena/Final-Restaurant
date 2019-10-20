@@ -29,10 +29,11 @@ public class Order extends FoodItem {
 	}
 
 	// This function calculate the overall preparation time of Order.
-	public static int checkPreparationTime(ArrayList<Integer> order, ArrayList<FoodItem> menu) {
+	public static int checkPreparationTime() {
 		int time = 0;
+		Menu menu = new Menu();
 		for (Integer i : order) {
-			int currentOrderTime = menu.get(i).getPreparationTime();
+			int currentOrderTime = menu.getDishPreparationTime(i);
 			time = time + currentOrderTime;
 		}
 		return time;

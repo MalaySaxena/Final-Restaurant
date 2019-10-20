@@ -43,7 +43,7 @@ public class UserInterface {
 			if (responseYes(answerToQuery)) {
 				Menu menu = new Menu();
 				menu.displayMenu();
-				processing();
+				processing(90000);
 				// to decide what user would like to have, he/she is given a 10 second break.
 				try {
 					TimeUnit.SECONDS.sleep(10); //
@@ -90,7 +90,6 @@ public class UserInterface {
 		{
 			System.out.println("Shop is closed Now, come between 10am - 9pm");
 		}
-
 		System.out.println("--------------------------------------------");
 		System.out.println("--------------------------------------------");
 		System.out.println("GS Restaurent - BTech 2nd year java project");
@@ -119,7 +118,9 @@ public class UserInterface {
 		return false;
 	}
 
-	public static void processing() {
+	
+
+	public static void processing(int time) {
 		Thread t = new Thread() {
 			public void run() {
 				System.out.print("Processing [");
@@ -129,7 +130,7 @@ public class UserInterface {
 						System.out.println(">] 100% \nProcessing done");		
 					}
 					try {
-						Thread.sleep(300);
+						Thread.sleep(time/300);
 					} catch (Exception e) {
 					}
 
@@ -183,7 +184,7 @@ public class UserInterface {
 			System.out.println("\nVeronica=> \t Your change is Rs. " + (billAmount - bill) + "/-");
 
 		System.out.println("Veronica=> \t Your order is being prepared");
-		processing();
+		processing(Order.checkPreparationTime()*1000);
 		// Order now collected is being prepared so, it got stop for a particular time
 		try {
 			TimeUnit.SECONDS.sleep(Order.checkPreparationTime()); //
@@ -192,6 +193,8 @@ public class UserInterface {
 		} finally {
 			// finally enjoy the meal
 			System.out.println("Veronica=> \t Enjoy your meal");
+			processing(90000);
+			
 		}
 	}
 }
