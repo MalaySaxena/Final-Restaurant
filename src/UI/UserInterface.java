@@ -101,7 +101,25 @@ public class UserInterface {
 			System.out.println("Pls. enter either (1/2):");
 			break;
 		}
+		System.out.println("--------------------------------------------");
+		System.out.println("--------------------------------------------");
+		System.out.println("GS Restaurent - BTech 2nd year java project");
+		System.out.println("--------------------------------------------");
+		System.out.println("--------------------------------------------");
+		System.out.println("Manager:- Malay Saxena        (0801CS181037)");
+		System.out.println("Chef:-    Ajinkya Taranekar   (0801CS181008)");
+		System.out.println("Pesonal Assistant:- Veronica");
+		System.out.println("--------------------------------------------");
+		System.out.println("--------------------------------------------");
+		System.out.println("Thank You.");
+		System.out.println("Veronica=> Any feedback... :)");
+		System.out.print("Judges=> \t");
+		keyboard.next();
+		System.out.println("\n--------------------------------------------");
+		System.out.println("--------------------------------------------");
+
 		keyboard.close();
+
 	}
 
 	static boolean responseYes(String answerToQuery) {
