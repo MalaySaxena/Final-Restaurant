@@ -1,7 +1,13 @@
 package menu;
-// 1unit of time = 5 min in real world
-import java.util.ArrayList;
 
+/* This is Menu class, it contains various items present in Menu
+ * The Menu constructor holds a list of various dishes.
+ * Given in proper time, like FoodItem(Dish Name, Cost and Preparation time)
+ * Here, 1unit of time = 5 min in real world
+ * accordingly this dishes are stored in arraylist. 
+ * */
+
+import java.util.ArrayList;
 import rawmaterial.FoodItem;
 
 public class Menu {
@@ -185,6 +191,7 @@ public class Menu {
 
 	}
 
+	// This function is used to display Menu in a proper tabular format.
 	public void displayMenu() {
 		String leftAlignFormat = "| %-4d | %-25s | %-4d |%n";
 		int i = 0;
@@ -200,11 +207,13 @@ public class Menu {
 		System.out.format("+------+---------------------------+------+%n");
 	}
 
+	// This function is used to get Dish Name from it's id number.
 	public String getDishName(int foodItemNumber) {
 		String foodItem = menu.get(foodItemNumber).getName();
 		return foodItem;
 	}
 
+	// This function is used to get Dish Price from it's id number.
 	public Integer getDishPrice(int foodItemNumber) {
 		int foodItem = menu.get(foodItemNumber).getPrice();
 		return foodItem;

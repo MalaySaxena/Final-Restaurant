@@ -5,26 +5,36 @@ import java.util.Map;
 
 public class FoodItem {
 
+	private String name;
+	private int price;
+	private static boolean status;
+	private int preparationTime;
+
+	// getters
 	public String getName() {
 		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public int getPrice() {
 		return price;
 	}
 
+	public int getPreparationTime() {
+		return preparationTime;
+	}
+
+	// setters
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public void setPrice(int price) {
 		this.price = price;
 	}
 
-	private String name;
-	private int price;
-	private static boolean status;
-	private int preparationTime;
+	public void setPreparationTime(int preparationTime) {
+		this.preparationTime = preparationTime;
+	}
 
 	static Hashtable<String, Integer> ingredients = new Hashtable<String, Integer>();
 
@@ -44,18 +54,15 @@ public class FoodItem {
 
 	public static boolean checkStatus(String foodItem) {
 		status = true;
-		/*ingredients.forEach((a, b) -> {
-			int checkQuantity = ingredients.get(a);
-			int checkWithQuantity = RawMaterial.ingredients.get(foodItem);
-			if (checkQuantity > checkWithQuantity) {
-				status = false;
-			}
+		/*
+		 * ingredients.forEach((a, b) -> { int checkQuantity = ingredients.get(a); int
+		 * checkWithQuantity = RawMaterial.ingredients.get(foodItem); if (checkQuantity
+		 * > checkWithQuantity) { status = false; }
+		 * 
+		 * });
+		 */
+		for (Map.Entry<String, Integer> entry : RawMaterial.ingredients.entrySet()) {
 
-		});
-*/
-		 for(Map.Entry<String,Integer> entry: RawMaterial.ingredients.entrySet()){
-			 
-	           	
 		}
 		return status;
 
@@ -64,14 +71,6 @@ public class FoodItem {
 	@Override
 	public String toString() {
 		return name;
-	}
-
-	public int getPreparationTime() {
-		return preparationTime;
-	}
-
-	public void setPreparationTime(int preparationTime) {
-		this.preparationTime = preparationTime;
 	}
 
 }
