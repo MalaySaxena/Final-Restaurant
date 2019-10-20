@@ -39,7 +39,7 @@ public class Order extends FoodItem {
 
 		Menu menu = new Menu();
 		for (Integer i : order) {
-			int currentOrderTime = Menu.menu.getDishPreparationTime(i);
+			int currentOrderTime = menu.getDishPreparationTime(i);
 
 			time = time + currentOrderTime;
 		}
