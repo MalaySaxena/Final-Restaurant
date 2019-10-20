@@ -61,33 +61,34 @@ public class UserInterface {
 						System.out.println("Veronica=> \t From Main menu, what you would like to have?");
 						while (true) {
 							System.out.print(customer.getCustomerName() + " ji=> \t ");
-							int foodItemNumber = keyboard.nextInt();
-							Order.collectOrder( foodItemNumber);
+							int foodItemNumber = keyboard.nextInt() - 1;
+							Order.collectOrder(foodItemNumber);
 							System.out.println("\nVeronica=> \t Ok," + menu.getDishName(foodItemNumber)
 									+ " added, so would you like to have more (yes/no)?");
 							answerToOrderQuery = keyboard.next();
 							if (answerToOrderQuery.equalsIgnoreCase("no"))
 								break;
 						}
-						
+
 						System.out.println("Veronica=> \t Here is your Bill.");
-						int bill=Order.placeBill(customer.getCustomerName(), customer.getCustomerMobileNumber(), tableNumber);
+						int bill = Order.placeBill(customer.getCustomerName(), customer.getCustomerMobileNumber(),
+								tableNumber);
 						System.out.println("Veronica=> \t Enter Amount displayed in Bill.");
 						System.out.print("Customer=> \t ");
 						int billAmount = keyboard.nextInt();
-						if(billAmount==bill) 
-							System.out.println("\nVeronica=> \t Your change is Rs. " +(bill-billAmount) +"/-");	
-							
+						if (billAmount >= bill)
+							System.out.println("\nVeronica=> \t Your change is Rs. " + (billAmount - bill) + "/-");
+
 						System.out.println("Veronica=> \t Your order is being prepared");
-						
+
 						try {
 							TimeUnit.SECONDS.sleep(Order.checkPreparationTime()); //
 						} catch (InterruptedException e) {
-							System.out.println("sleeped for "+Order.checkPreparationTime() +" seconds");
+							System.out.println("sleeped for " + Order.checkPreparationTime() + " seconds");
 						} finally {
-							
+
 							System.out.println("Veronica=> \t Enjoy your meal");
-									
+
 						}
 					}
 
