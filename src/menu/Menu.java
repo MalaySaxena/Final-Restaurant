@@ -190,9 +190,6 @@ public class Menu {
 		food.addRawMaterial("Jeera", 1);
 		food.addlastFoodItem();
 		menu.add(food);
-		
-		
-		
 
 	}
 

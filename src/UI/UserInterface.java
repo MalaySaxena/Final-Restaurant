@@ -118,19 +118,17 @@ public class UserInterface {
 		return false;
 	}
 
-	
-
 	public static void processing(int time) {
 		Thread t = new Thread() {
 			public void run() {
 				System.out.print("Processing [");
-				for (int i = 0; i < 100; i+=3) {
+				for (int i = 0; i < 100; i += 3) {
 					System.out.print("=");
-					if(i==99) {
-						System.out.println(">] 100% \nProcessing done");		
+					if (i == 99) {
+						System.out.println(">] 100% \nProcessing done");
 					}
 					try {
-						Thread.sleep(time/300);
+						Thread.sleep(time / 300);
 					} catch (Exception e) {
 					}
 
@@ -184,7 +182,7 @@ public class UserInterface {
 			System.out.println("\nVeronica=> \t Your change is Rs. " + (billAmount - bill) + "/-");
 
 		System.out.println("Veronica=> \t Your order is being prepared");
-		processing(Order.checkPreparationTime()*10000);
+		processing(Order.checkPreparationTime() * 10000);
 		// Order now collected is being prepared so, it got stop for a particular time
 		try {
 			TimeUnit.SECONDS.sleep(Order.checkPreparationTime()); //
@@ -193,8 +191,7 @@ public class UserInterface {
 		} finally {
 			// finally enjoy the meal
 			System.out.println("Veronica=> \t Enjoy your meal\n\n");
-			
-			
+
 		}
 	}
 }

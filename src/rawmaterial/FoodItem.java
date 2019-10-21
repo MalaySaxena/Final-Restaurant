@@ -40,26 +40,30 @@ public class FoodItem {
 	public void setPreparationTime(int preparationTime) {
 		this.preparationTime = preparationTime;
 	}
+
 	static ArrayList<String> ingredientName = new ArrayList<String>();
 	static ArrayList<Integer> ingredientQuantity = new ArrayList<Integer>();
-		
+
 	RawMaterial rawIngredient = new RawMaterial();
-	static int left=0;
-	static int right=0;
+	static int left = 0;
+	static int right = 0;
 	static ArrayList<Integer> Left = new ArrayList<Integer>();
 	static ArrayList<Integer> Right = new ArrayList<Integer>();
+
 	public FoodItem(String name, int price, int preparationTime) {
 		this.name = name;
 		this.price = price;
 		this.setPreparationTime(preparationTime);
 		Left.add(left);
 		Right.add(right);
-		left=right;
+		left = right;
 	}
+
 	public void addlastFoodItem() {
 		Left.add(left);
 		Right.add(right);
 	}
+
 	// This function add Raw Material in a Particular foodItem.
 	public void addRawMaterial(String name, int quantity) {
 		ingredientName.add(name);
@@ -71,19 +75,18 @@ public class FoodItem {
 	// quantity
 	public static boolean checkStatus(int foodItemNumber) {
 		status = true;
-		for (int i =Left.get(foodItemNumber+1); i<Right.get(foodItemNumber+1); i++) {
+		for (int i = Left.get(foodItemNumber + 1); i < Right.get(foodItemNumber + 1); i++) {
 			int checkQuantity = ingredientQuantity.get(i);
 			int checkWithQuantity = 0;
-			try{checkWithQuantity = RawMaterial.ingredients.get(ingredientName.get(i));}
-			catch(Exception e) { System.out.print("Null pointer Exception");}
+			checkWithQuantity = RawMaterial.ingredients.get(ingredientName.get(i));
+
 			if (checkQuantity > checkWithQuantity) {
 				status = false;
 				return status;
-			}
-			else
-				RawMaterial.ingredients.replace(Menu.getDishName(i), checkWithQuantity-checkQuantity);
+			} else
+				RawMaterial.ingredients.replace(Menu.getDishName(i), checkWithQuantity - checkQuantity);
 		}
-		
+
 		return status;
 
 	}

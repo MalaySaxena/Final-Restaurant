@@ -23,7 +23,7 @@ public class Order extends FoodItem {
 	public static boolean collectOrder(int foodItemNumber) {
 		if (!checkStatus((foodItemNumber))) {
 			Random r = new Random();
-			System.out.println("Sorry this" + Menu.getDishName(foodItemNumber)
+			System.out.println("Sorry this " + Menu.getDishName(foodItemNumber)
 					+ "is unavailable, Check our top other dishes " + Menu.getDishName(r.nextInt(18) + 1));
 			return false;
 		} else {
@@ -48,14 +48,14 @@ public class Order extends FoodItem {
 	// This function place and display the bill according to the order provided by
 	// user, and returns the total amount.
 	public static int placeBill(String customerName, String customerMobileNumber, int tableNumber) {
-		Date date=new Date();  
-		
+		Date date = new Date();
+
 		String leftAlignFormat = "| %-4d | %-25s | %-4d |%n";
 		int i = 0, bill = 0;
 		System.out.format("+-----------------------------------------+%n");
 		System.out.format("+--------------------BILL-----------------+%n");
 		System.out.format("+-----------------------------------------+%n");
-		System.out.println("Bill Issued on=> " + date );
+		System.out.println("Bill Issued=> " + date);
 		System.out.println("Customer Name=> " + customerName);
 		System.out.println("Customer Mobile Number=> " + customerMobileNumber);
 		System.out.println("Customer Table Number=> " + tableNumber);
