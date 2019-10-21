@@ -141,13 +141,13 @@ public class UserInterface {
 	}
 
 	static void collectOrder(Customer customer, Scanner keyboard, Menu menu) {
-		System.out.println("Veronica=> \t May I have your name please.");
+		System.out.println("Veronica=> \t May I have your name please.(Enter name)");
 		// To get customer Name
 		System.out.print("Customer=> \t ");
 		customer.setCustomerName(keyboard.next());
 
 		// To get customer mobile number
-		System.out.println("\nVeronica=> \t Also, May I have your mobile number please.");
+		System.out.println("\nVeronica=> \t Also, May I have your mobile number please.(Enter mobile number)");
 		System.out.print(customer.getCustomerName() + " ji=> \t ");
 		customer.setCustomerMobileNumber(keyboard.next());
 
@@ -163,7 +163,7 @@ public class UserInterface {
 			System.out.print(customer.getCustomerName() + " ji=> \t ");
 			int foodItemNumber = keyboard.nextInt() - 1;
 			Order.collectOrder(foodItemNumber);
-			System.out.println("\nVeronica=> \t Ok," + menu.getDishName(foodItemNumber)
+			System.out.println("\nVeronica=> \t Ok," + Menu.getDishName(foodItemNumber)
 					+ " added, so would you like to have more (yes/no)?");
 			String answerToOrderQuery = keyboard.next();
 			if (answerToOrderQuery.equalsIgnoreCase("no"))
@@ -184,7 +184,7 @@ public class UserInterface {
 			System.out.println("\nVeronica=> \t Your change is Rs. " + (billAmount - bill) + "/-");
 
 		System.out.println("Veronica=> \t Your order is being prepared");
-		processing(Order.checkPreparationTime()*1000);
+		processing(Order.checkPreparationTime()*10000);
 		// Order now collected is being prepared so, it got stop for a particular time
 		try {
 			TimeUnit.SECONDS.sleep(Order.checkPreparationTime()); //
@@ -192,8 +192,8 @@ public class UserInterface {
 			System.out.println("sleeped for " + Order.checkPreparationTime() + " seconds");
 		} finally {
 			// finally enjoy the meal
-			System.out.println("Veronica=> \t Enjoy your meal");
-			processing(90000);
+			System.out.println("Veronica=> \t Enjoy your meal\n\n");
+			
 			
 		}
 	}

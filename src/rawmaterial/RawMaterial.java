@@ -43,20 +43,22 @@ public class RawMaterial {
 
 		// spices
 		ingredients.put("Salt", 15);
-		ingredients.put("Garam Masala", 15);
+		ingredients.put("Garam Masala Powder", 15);
 		ingredients.put("Turmeric Powder", 15);
 		ingredients.put("Red Chilli Powder", 15);
 		ingredients.put("Jeera", 15);
+		ingredients.put("Black pepper", 15);
 
 		// bakery
 		ingredients.put("Sandwich Bread", 15);
 		ingredients.put("Cheese", 15);
-		ingredients.put("Pizza bread", 15);
+		ingredients.put("Pizza Bread", 15);
 		ingredients.put("Butter", 15);
+		ingredients.put("Paneer", 15);
 
 		// further ingredients
 		ingredients.put("Dry Noodles", 15);
-		ingredients.put("Machurian balls", 15);
+		ingredients.put("Manchurian balls", 15);
 		ingredients.put("Boiled Rice", 15);
 		ingredients.put("Oil", 15);
 

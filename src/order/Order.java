@@ -4,6 +4,7 @@ package order;
  * It is extend of FoodItem class.
  * */
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 
 import menu.Menu;
@@ -20,11 +21,10 @@ public class Order extends FoodItem {
 	// This function takes the food item number and check whether the item is
 	// available in inventory or not.
 	public static boolean collectOrder(int foodItemNumber) {
-		Menu menu = new Menu();
 		if (!checkStatus((foodItemNumber))) {
 			Random r = new Random();
-			System.out.println("Sorry this" + menu.getDishName(foodItemNumber)
-					+ "is unavailable, Check our top other dishes " + menu.getDishName(r.nextInt(18) + 1));
+			System.out.println("Sorry this" + Menu.getDishName(foodItemNumber)
+					+ "is unavailable, Check our top other dishes " + Menu.getDishName(r.nextInt(18) + 1));
 			return false;
 		} else {
 			order.add(foodItemNumber); // if there is availability we add the foodItemNumber in Order ArrayList.
@@ -37,9 +37,8 @@ public class Order extends FoodItem {
 	public static int checkPreparationTime() {
 		int time = 0;
 
-		Menu menu = new Menu();
 		for (Integer i : order) {
-			int currentOrderTime = menu.getDishPreparationTime(i);
+			int currentOrderTime = Menu.getDishPreparationTime(i);
 
 			time = time + currentOrderTime;
 		}
@@ -49,13 +48,14 @@ public class Order extends FoodItem {
 	// This function place and display the bill according to the order provided by
 	// user, and returns the total amount.
 	public static int placeBill(String customerName, String customerMobileNumber, int tableNumber) {
-
+		Date date=new Date();  
+		
 		String leftAlignFormat = "| %-4d | %-25s | %-4d |%n";
 		int i = 0, bill = 0;
-		Menu menu = new Menu();
 		System.out.format("+-----------------------------------------+%n");
 		System.out.format("+--------------------BILL-----------------+%n");
 		System.out.format("+-----------------------------------------+%n");
+		System.out.println("Bill Issued on=> " + date );
 		System.out.println("Customer Name=> " + customerName);
 		System.out.println("Customer Mobile Number=> " + customerMobileNumber);
 		System.out.println("Customer Table Number=> " + tableNumber);
@@ -65,8 +65,8 @@ public class Order extends FoodItem {
 		System.out.format("+------+---------------------------+------+%n");
 		for (Integer foodItem : order) {
 			i++;
-			System.out.format(leftAlignFormat, i, menu.getDishName(foodItem), menu.getDishPrice(foodItem));
-			bill += menu.getDishPrice(foodItem);
+			System.out.format(leftAlignFormat, i, Menu.getDishName(foodItem), Menu.getDishPrice(foodItem));
+			bill += Menu.getDishPrice(foodItem);
 
 		}
 		System.out.format("+------+---------------------------+------+%n");

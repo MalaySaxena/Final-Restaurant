@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import rawmaterial.FoodItem;
 
 public class Menu {
-	public static ArrayList<FoodItem> menu = new ArrayList<FoodItem>(18);
+	public static ArrayList<FoodItem> menu = new ArrayList<FoodItem>(19);
 
 	public Menu() {
 		FoodItem food = null;
@@ -22,7 +22,7 @@ public class Menu {
 		food = new FoodItem("Cheese Sandwich", 25, 4);
 		food.addRawMaterial("Cheese", 4);
 		food.addRawMaterial("Black pepper", 1);
-		food.addRawMaterial("Sandwhich Bread", 2);
+		food.addRawMaterial("Sandwich Bread", 2);
 		menu.add(food);
 		// ii)
 		food = new FoodItem("Veg Sandwich", 30, 3);
@@ -31,7 +31,7 @@ public class Menu {
 		food.addRawMaterial("Cabbage", 1);
 		food.addRawMaterial("Cucumber", 1);
 		food.addRawMaterial("Black pepper", 1);
-		food.addRawMaterial("Sandwhich Bread", 2);
+		food.addRawMaterial("Sandwich Bread", 2);
 		menu.add(food);
 
 		// 2 Pizza
@@ -68,7 +68,7 @@ public class Menu {
 		// i)
 		food = new FoodItem("Noodles", 60, 4);
 		food.addRawMaterial("Dry Noodles", 4);
-		food.addRawMaterial("Green Capsicum", 2);
+		food.addRawMaterial("Green-Capsicum", 2);
 		food.addRawMaterial("Onion", 2);
 		food.addRawMaterial("Vinegar", 1);
 		food.addRawMaterial("Red Chilli Sauce", 1);
@@ -77,9 +77,9 @@ public class Menu {
 
 		// ii)
 		food = new FoodItem("Manchurian", 60, 5);
-		food.addRawMaterial("Manchrian balls", 4);
+		food.addRawMaterial("Manchurian balls", 4);
 		food.addRawMaterial("Red Chilli Sauce", 1);
-		food.addRawMaterial("Green Capsicum", 2);
+		food.addRawMaterial("Green-Capsicum", 2);
 		food.addRawMaterial("Oil", 1);
 		food.addRawMaterial("Onion", 2);
 		food.addRawMaterial("Vinegar", 1);
@@ -89,7 +89,7 @@ public class Menu {
 		food = new FoodItem("Fried Rice", 50, 4);
 		food.addRawMaterial("Boiled Rice", 4);
 		food.addRawMaterial("Red Chilli Sauce", 1);
-		food.addRawMaterial("Green Capsicum", 2);
+		food.addRawMaterial("Green-Capsicum", 2);
 		food.addRawMaterial("Oil", 1);
 		food.addRawMaterial("Onion", 2);
 		food.addRawMaterial("Vinegar", 1);
@@ -150,28 +150,28 @@ public class Menu {
 		// Roti
 		// i)
 		food = new FoodItem("Plain Roti", 5, 1);
-		food.addRawMaterial("Normal Atta", 2);
+		food.addRawMaterial("Normal atta", 2);
 		food.addRawMaterial("Salt", 1);
 		menu.add(food);
 
 		// ii)
 		food = new FoodItem("Butter Roti", 7, 1);
 		food.addRawMaterial("Butter", 2);
-		food.addRawMaterial("Normal Atta", 2);
+		food.addRawMaterial("Normal atta", 2);
 		food.addRawMaterial("Salt", 1);
 		menu.add(food);
 
 		// iii)
 		food = new FoodItem("Butter Naan", 15, 2);
 		food.addRawMaterial("Butter", 2);
-		food.addRawMaterial("Whole Wheat", 2);
+		food.addRawMaterial("Whole-wheat", 2);
 		food.addRawMaterial("Salt", 1);
 		menu.add(food);
 
 		// iv)
 		food = new FoodItem("Tandoori Roti", 10, 2);
 		food.addRawMaterial("Butter", 2);
-		food.addRawMaterial("Whole Wheat", 2);
+		food.addRawMaterial("Whole-wheat", 2);
 		food.addRawMaterial("Salt", 1);
 		menu.add(food);
 
@@ -188,7 +188,11 @@ public class Menu {
 		food.addRawMaterial("Oil", 1);
 		food.addRawMaterial("Salt", 1);
 		food.addRawMaterial("Jeera", 1);
+		food.addlastFoodItem();
 		menu.add(food);
+		
+		
+		
 
 	}
 
@@ -209,19 +213,19 @@ public class Menu {
 	}
 
 	// This function is used to get Dish Name from it's id number.
-	public String getDishName(int foodItemNumber) {
+	public static String getDishName(int foodItemNumber) {
 		String foodItem = menu.get(foodItemNumber).getName();
 		return foodItem;
 	}
 
 	// This function is used to get Dish Price from it's id number.
-	public Integer getDishPrice(int foodItemNumber) {
+	public static Integer getDishPrice(int foodItemNumber) {
 		int foodItem = menu.get(foodItemNumber).getPrice();
 		return foodItem;
 	}
 
 	// This function is used to get Dish PreparationTime from it's id number.
-	public Integer getDishPreparationTime(int foodItemNumber) {
+	public static Integer getDishPreparationTime(int foodItemNumber) {
 		int foodItem = menu.get(foodItemNumber).getPreparationTime();
 		return foodItem;
 	}

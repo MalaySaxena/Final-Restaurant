@@ -56,7 +56,10 @@ public class FoodItem {
 		Right.add(right);
 		left=right;
 	}
-
+	public void addlastFoodItem() {
+		Left.add(left);
+		Right.add(right);
+	}
 	// This function add Raw Material in a Particular foodItem.
 	public void addRawMaterial(String name, int quantity) {
 		ingredientName.add(name);
@@ -68,15 +71,17 @@ public class FoodItem {
 	// quantity
 	public static boolean checkStatus(int foodItemNumber) {
 		status = true;
-		Menu menu = new Menu();
-		for (int i =Left.get(foodItemNumber); i<Right.get(foodItemNumber); i++) {
+		for (int i =Left.get(foodItemNumber+1); i<Right.get(foodItemNumber+1); i++) {
 			int checkQuantity = ingredientQuantity.get(i);
-			int checkWithQuantity = RawMaterial.ingredients.get(menu.getDishName(foodItemNumber));
+			int checkWithQuantity = 0;
+			try{checkWithQuantity = RawMaterial.ingredients.get(ingredientName.get(i));}
+			catch(Exception e) { System.out.print("Null pointer Exception");}
 			if (checkQuantity > checkWithQuantity) {
 				status = false;
 				return status;
 			}
-
+			else
+				RawMaterial.ingredients.replace(Menu.getDishName(foodItemNumber), checkWithQuantity-checkQuantity);
 		}
 		
 		return status;
