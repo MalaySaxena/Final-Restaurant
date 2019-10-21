@@ -81,7 +81,7 @@ public class FoodItem {
 				return status;
 			}
 			else
-				RawMaterial.ingredients.replace(Menu.getDishName(foodItemNumber), checkWithQuantity-checkQuantity);
+				RawMaterial.ingredients.replace(Menu.getDishName(i), checkWithQuantity-checkQuantity);
 		}
 		
 		return status;
