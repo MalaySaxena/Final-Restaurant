@@ -160,9 +160,13 @@ public class UserInterface {
 		while (true) {
 			System.out.print(customer.getCustomerName() + " ji=> \t ");
 			int foodItemNumber = keyboard.nextInt() - 1;
-			Order.collectOrder(foodItemNumber);
-			System.out.println("\nVeronica=> \t Ok," + Menu.getDishName(foodItemNumber)
-					+ " added, so would you like to have more (yes/no)?");
+
+			if (Order.collectOrder(foodItemNumber))
+				System.out.println("\nVeronica=> \t Ok," + Menu.getDishName(foodItemNumber)
+						+ " added, so would you like to have more (yes/no)?");
+			else
+				System.out.println("\nVeronica=> \t So would you like to have more (yes/no)?");
+
 			String answerToOrderQuery = keyboard.next();
 			if (answerToOrderQuery.equalsIgnoreCase("no"))
 				break;
@@ -190,7 +194,7 @@ public class UserInterface {
 			System.out.println("sleeped for " + Order.checkPreparationTime() + " seconds");
 		} finally {
 			// finally enjoy the meal
-			System.out.println("Veronica=> \t Enjoy your meal\n\n");
+			System.out.println("\nVeronica=> \t Enjoy your meal\n\n");
 
 		}
 	}

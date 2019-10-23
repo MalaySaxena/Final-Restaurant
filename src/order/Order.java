@@ -24,7 +24,7 @@ public class Order extends FoodItem {
 		if (!checkStatus((foodItemNumber))) {
 			Random r = new Random();
 			System.out.println("Sorry this " + Menu.getDishName(foodItemNumber)
-					+ "is unavailable, Check our top other dishes " + Menu.getDishName(r.nextInt(18) + 1));
+					+ " is unavailable, Check our top other dishes " + Menu.getDishName(r.nextInt(18) + 1));
 			return false;
 		} else {
 			order.add(foodItemNumber); // if there is availability we add the foodItemNumber in Order ArrayList.

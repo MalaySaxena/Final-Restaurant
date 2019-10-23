@@ -6,8 +6,6 @@ import java.util.ArrayList;
  * Which contain whereas fooditem link with raw materials. 
  * */
 
-import menu.Menu;
-
 public class FoodItem {
 
 	private String name;
@@ -78,13 +76,16 @@ public class FoodItem {
 		for (int i = Left.get(foodItemNumber + 1); i < Right.get(foodItemNumber + 1); i++) {
 			int checkQuantity = ingredientQuantity.get(i);
 			int checkWithQuantity = 0;
-			checkWithQuantity = RawMaterial.ingredients.get(ingredientName.get(i));
-
+			try {
+				checkWithQuantity = RawMaterial.ingredients.get(ingredientName.get(i));
+			} catch (Exception e) {
+				System.out.print("Null pointer Exception");
+			}
 			if (checkQuantity > checkWithQuantity) {
 				status = false;
 				return status;
 			} else
-				RawMaterial.ingredients.replace(Menu.getDishName(i), checkWithQuantity - checkQuantity);
+				RawMaterial.ingredients.replace(ingredientName.get(i), checkWithQuantity - checkQuantity);
 		}
 
 		return status;
